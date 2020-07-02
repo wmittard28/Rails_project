@@ -1,19 +1,19 @@
 .float-content-left-container {
     box-sizing: border-box;
     float: left;
-    color: rgb(29, 134, 219);;
-    font-size: 14px;
+    color: rgb(0, 4, 7);
+    font-size: 28px;
     font-weight: bold;
     margin: 0;
-    padding: 0 25px 50px;
-    width: 1100px;
+    padding: 0 25px 25px;
+    width: 600px;
     /* width value fills container and provides 25px-gap between floats */
   }
 
   .float-content-right-container {
     box-sizing: border-box;
     float: right;
-    color: rgb(29, 134, 219);;
+    color: rgb(0, 4, 7);
     font-size: 14px;
     font-weight: bold;
     margin: 0;

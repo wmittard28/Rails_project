@@ -14,10 +14,13 @@
     <%= render :partial => "shared/form_errors", :locals => {:obj => @user} %>
   <% end %>
 
+  <br>
+
   <div class="form-body-container">
-  <div style="text-align: center"
-  <h2>Log In </h2>
-  </div>
+  <div class="font-weight-bold text-dark" style="text-align: center">
+  <img src="/images/AppHub1.jpg" width="55" height="55" class="d-inline-block align-top" alt="" loading="lazy">
+  <h3>AppHub Log In</h3>
+  </div><br>
     <%= form_for(@user, :url => sessions_path, :method => "post") do |f| %>
 
       <%= f.label :username, "Username or Email", :class => "form-label" %>
@@ -34,3 +37,12 @@
 
 </div>
 
+<!-- CSS -->
+<style type="text/css">
+  html, body { height: 1000%;}
+  body {
+    background-image: url(https://www.solidbackgrounds.com/images/1920x1080/1920x1080-light-sky-blue-solid-color-background.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;}
+</style>

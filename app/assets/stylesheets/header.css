@@ -1,44 +1,4 @@
-#header-container {
-    box-sizing: border-box;
-    display: block;
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0 25px;
-    padding: 0;
-  }
-
-  #footer-container {
-    box-sizing: border-box;
-    display: block;
-    color: rgb(125, 125, 125);
-    font-size: 12px;
-    font-weight: normal;
-    margin: 0 25px;
-    padding: 24px 0 0;
-  }
-
-  #header-logo-container {
-    box-sizing: border-box;
-    float: left;
-    color: rgb(125, 125, 125);
-    font-size: 32px;
-    font-weight: normal;
-    margin: 0;
-    padding: 20px 30px 0 0;
-  }
-
-  #header-navbar-container {
-    box-sizing: border-box;
-    float: left;
-    color: rgb(125, 125, 125);
-    font-size: 16px;
-    font-weight: normal;
-    margin: 0;
-    padding: 32px 0 0;
-  }
-
-  #header-login-logout-container {
+ #header-login-logout-container {
     box-sizing: border-box;
     float: right;
     color: rgb(125, 125, 125);
@@ -62,21 +22,4 @@
   }
   .header-link a:hover, .header-link a:active {
     color: rgb(125, 125, 125);
-  }
-
-  .footer-link {
-    box-sizing: border-box;
-    display: inline-block;
-    color: rgb(40, 40, 40);
-    font-weight: normal;
-    margin: 0;
-    padding: 0;
-  }
-  .footer-link a:link, .footer-link a:visited {
-    color: rgb(40, 40, 40);
-    text-decoration: none;
-  }
-  .footer-link a:hover, .footer-link a:active {
-    color: rgb(0, 125, 255);
-    text-decoration: underline;
   }

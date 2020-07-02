@@ -15,13 +15,29 @@
   <% end %>
 
   <div class="form-body-container">
-  <div style="text-algin: center">
-    <h2>Sign up</h2>
-  </div>
+  <div class="font-weight-bold text-dark" style="text-align: center">
+  <img src="/images/AppHub1.jpg" width="55" height="55" class="d-inline-block align-top" alt="" loading="lazy">
+  <h3>AppHub Sign Up</h3>
+  </div><br>
     <%= form_for @user do |f| %>
       <%= render :partial => "signup_form", :locals => {:f => f} %>
-      <%= f.submit "Sign up", :class => "form-submit-btn" %>
+      <%= f.submit "Sign up", :class => "form-submit-btn" %><br>
+ <div style="text-align: center">
+ <%= link_to "Log in with Google", "/google_signup", :class => "btn btn-long btn-primary" %>
+ </div>
+
     <% end %>
   </div>
 
 </div>
+
+
+<!-- CSS -->
+<style type="text/css">
+  html, body { height: 1000%;}
+  body {
+    background-image: url(https://www.solidbackgrounds.com/images/1920x1080/1920x1080-light-sky-blue-solid-color-background.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;}
+</style>
