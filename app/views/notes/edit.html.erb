@@ -10,7 +10,7 @@
 
   <div class="form-body-container-large">
     <%= form_for(@note, :url => job_application_note_path(@note.job_application, @note), :method => "patch") do |f| %>
-      <%= render :partial => "job_application_note_form", :locals => {:f => f} %>
+      <%= render :partial => "job_application_note", :locals => {:f => f} %>
       <%= f.submit "Update", :class => "form-submit-btn" %>
     <% end %>
   </div>

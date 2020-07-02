@@ -9,7 +9,7 @@ class NotesController < ApplicationController
 
     def create
       redirect_to job_applications_path(current_user) unless params_job_application_exists_and_belongs_to_current_user?
-      @note = @job_application.notes.build(log_params)
+      @note = @job_application.notes.build(note_params)
       if @note.save then redirect_to job_application_path(@job_application)
       else render :new and return
       end
@@ -17,7 +17,7 @@ class NotesController < ApplicationController
 
 
     def show
-      redirect_to job_applications_path(current_user) unless params_job_application_log_exists?
+      redirect_to job_applications_path(current_user) unless params_job_application_note_exists?
 
       idx = @note.job_application.note_ids.index(@note.id)
       @prev_note = (idx > 0) ? @note.job_application.notes[idx-1] : @note
@@ -39,7 +39,7 @@ class NotesController < ApplicationController
 
     def update
       redirect_to job_applications_path(current_user) unless params_job_application_note_exists_and_belongs_to_current_user?
-      if @note.update(note_params) then redirect_to job_application_log_path(@job_application, @note)
+      if @note.update(note_params) then redirect_to job_application_note_path(@job_application, @note)
       else render :edit and return
       end
     end
@@ -69,6 +69,6 @@ class NotesController < ApplicationController
     end
 
     def params_job_application_note_exists_and_belongs_to_current_user?
-      @note.user.id == current_user.id if params_job_application_log_exists?
+      @note.user.id == current_user.id if params_job_application_note_exists?
     end
   end

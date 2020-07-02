@@ -1,14 +1,14 @@
+<br>
 <div class="form-container-large">
-
-  <div class="form-header-container-large">
-    <h1>New Application Note</h1>
-  </div>
 
   <% if @note.errors.any? %>
     <%= render :partial => "shared/form_errors", :locals => {:obj => @note} %>
   <% end %>
 
   <div class="form-body-container-large">
+  <div style="text-align: center">
+  <h2>New Application Note</h2>
+  </div>
     <%= form_for(@note, :url => job_application_notes_path(@note.job_application), :method => "post") do |f| %>
       <%= render :partial => "job_application_note", :locals => {:f => f} %>
       <%= f.submit "Create new note", :class => "form-submit-btn" %>

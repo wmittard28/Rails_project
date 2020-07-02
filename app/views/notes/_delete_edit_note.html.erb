@@ -1,31 +1,4 @@
-<div class="content-container">
-
-  <div class="content-header-container">
-
-    <% if @note.user != current_user %>
-      <h2 class="header-top">
-        <%= link_to(@note.user.username, job_applications_path(@note.user)) %>
-        <div><%= link_to("Notes for #{@note.company.name}", job_application_path(@note.job_application)) %></div>
-      </h2>
-    <% else %>
-      <h2 class="header-top"><%= link_to("Notes for #{@note.company.name}", job_application_path(@note.job_application)) %></h2>
-    <% end %>
-
-    <h1 class="left-align"><%= @note.title %></h1>
-    <h3>Created on <%= @note.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%d %b %Y at %l:%M %p ET") %></h3>
-
-  </div>
-
-  <div class="content-body-container">
-    <%= link_to("Previous", job_application_note_path(@note.job_application, @prev_log), :class => "job_application-notes-prev") %>
-    &nbsp; &nbsp;
-    <%= link_to(  "Next"  , job_application_note_path(@note.job_application, @next_note), :class => "job_application-notes-next") %>
-    <p><%= @note.content %></p>
-  </div>
-
-  <% if @log.user == current_user %>
-    <%= link_to("Edit application log", edit_job_application_note_path(@note.job_application, @note), :class => "form-submit-btn") %>
-    <%= button_to("Delete application note", job_application_note_path(@note.job_application, @note), :method => :delete, :class => "form-submit-btn-red", :data => {:confirm => "Are you sure?"}) %>
-  <% end %>
-
+<div class="link-secondary-subcontainer">
+  <p><%= link_to("Delete", job_application_note_path(note.job_application, note), :method => :delete, :data => {:confirm => "Are you sure?"}) %></p>
+  <p><%= link_to("Edit", edit_job_application_note_path(note.job_application, note)) %></p>
 </div>

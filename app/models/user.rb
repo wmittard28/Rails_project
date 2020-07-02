@@ -19,6 +19,7 @@ class User < ApplicationRecord
     def self.find_or_create_by_omniauth(auth_hash)
       attribute = self.set_omniauth_query_attribute(auth_hash)
       self.find_or_create_by(attribute) do |user|
+        user.username      = self.set_omniauth_username(auth_hash)
         user.email      = self.set_omniauth_email(auth_hash)
         user.uid = auth_hash[:uid]
         user.password   = SecureRandom.hex
@@ -70,6 +71,19 @@ class User < ApplicationRecord
       if auth_hash[:info][:email].present? then { :email => auth_hash[:info][:email] }
       else { :uid => auth_hash[:uid] }
       end
+    end
+
+    def self.set_omniauth_username(auth_hash)
+      username = if auth_hash[:info][:nickname].present? then auth_hash[:info][:nickname]
+                 else auth_hash[:uid]
+                 end
+      if self.where(:username => username).any?
+        username += "_0001"
+        while self.where(:username => username).any?
+          username[-4..-1] = (1+username[-4..-1].to_i).to_s.rjust(4, "0")
+        end
+      end
+      username
     end
 
     def self.set_omniauth_email(auth_hash)

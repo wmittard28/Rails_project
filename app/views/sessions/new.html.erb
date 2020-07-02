@@ -9,15 +9,15 @@
 
 <div class="form-container">
 
-  <div class="form-header-container">
-    <h1>Sign in to MyTravels</h1>
-  </div>
 
   <% if @user.errors.any? %>
     <%= render :partial => "shared/form_errors", :locals => {:obj => @user} %>
   <% end %>
 
   <div class="form-body-container">
+  <div style="text-align: center"
+  <h2>Log In </h2>
+  </div>
     <%= form_for(@user, :url => sessions_path, :method => "post") do |f| %>
 
       <%= f.label :username, "Username or Email", :class => "form-label" %>
@@ -26,16 +26,10 @@
       <%= f.label :password, "Password", :class => "form-label" %>
       <%= f.password_field :password, :class => "form-field" %>
 
-      <%= f.submit "Sign in", :class => "form-submit-btn" %>
+      <%= f.submit "Sign in", :class => "form-submit-btn" %><br>
+
+      <%= link_to "Log in with Google", "/google_signup", :class => "btn btn-primary" %>
     <% end %>
-  </div>
-
-  <div class="form-divider-container">
-    <p>or</p>
-  </div>
-
-  <div class="form-body-container">
-  <%= link_to "Log in with Google", "/google_signup", :class => "btn btn-primary" %>
   </div>
 
 </div>

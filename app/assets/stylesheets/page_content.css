@@ -26,7 +26,7 @@
     text-align: left;
   }
   .content-header-container h2, .content-header-container h3 {
-    color: rgb(125, 125, 125);
+    color: rgb(40, 40, 40);
     margin: 5px 0 0;
     padding: 0;
     text-align: left;
@@ -35,7 +35,7 @@
     margin: 0 0 20px;
   }
   h2.header-top a:link, h2.header-top a:visited {
-    color: rgb(125, 125, 125);
+    color: rgb(40, 40, 40);
     text-decoration: underline;
   }
   h2.header-top a:hover, h2.header-top a:active {
