@@ -28,12 +28,9 @@ html, body {
   }
 
   #content {
-    height: 85%;
-    background-image: url(https://www.theladders.com/wp-content/uploads/Applying_for_A_Job_even_When_they_Arenot_Loking_081018.jpg);
-    background-repeat: no-repeat;
-    background-position: top center;
+    height: 100%;
     background-size: cover;
-    background-color: rgb(131, 131, 127);
+    background-color: rgb(250, 178, 111);
     box-sizing: border-box;
     display: block;
     color: rgb(40, 40, 40);
@@ -45,21 +42,6 @@ html, body {
     width: 100%;
   }
 
-  #footer {
-    background-color: rgb(252, 249, 249);
-    box-sizing: border-box;
-    display: block;
-    color: rgb(252, 249, 249);
-    font-size: 12px;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    min-height: 30px;
-    height: 30px;
-    min-width: 100%;
-    max-width: 100%;
-    width: 100%;
-  }
 
   .container {
     box-sizing: border-box;

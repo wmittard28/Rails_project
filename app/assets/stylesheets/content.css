@@ -23,7 +23,7 @@
     padding: 0;
   }
   h1.left-align {
-    text-align: left;
+    text-align: right;
   }
   .content-header-container h2, .content-header-container h3 {
     color: rgb(40, 40, 40);

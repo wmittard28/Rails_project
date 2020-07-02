@@ -10,11 +10,11 @@
       </h2>
     <% end %>
 
-    <h1 id="future_job_applications" class="<%= "left-align" if @user != current_user %>">Future Applications (<%= @user.future_job_applications.size.to_s %>)</h1>
+    <h1 id="current_job_applications" class="<%= "left-align" if @user != current_user %>">Current Job Applications (<%= @user.current_job_applications.size.to_s %>)</h1>
 
   </div>
 
-  <% @user.future_job_applications.each do |job_application| %>
+  <% @user.current_job_applications.each do |job_application| %>
     <div class="link-body-container">
       <%= render :partial => "delete_edit", :locals => {:job_application => job_application, :user => @user} %>
       <%= render :partial => "link_to", :locals => {:job_application => job_application} %>
@@ -22,10 +22,10 @@
   <% end %>
 
   <div class="content-header-container">
-    <h1 id="past_job_applications" class="<%= "left-align" if @user != current_user %>">Past Applications (<%= @user.past_job_applications.size.to_s %>)</h1>
+    <h1 id="expired_job_applications" class="<%= "left-align" if @user != current_user %>">Expired Job Applications (<%= @user.expired_job_applications.size.to_s %>)</h1>
   </div>
 
-  <% @user.past_job_applications.each do |job_application| %>
+  <% @user.expired_job_applications.each do |job_application| %>
     <div class="link-body-container">
       <%= render :partial => "delete_edit", :locals => {:job_application => job_application, :user => @user} %>
       <%= render :partial => "link_to", :locals => {:job_application => job_application} %>

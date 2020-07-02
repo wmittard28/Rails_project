@@ -33,12 +33,12 @@ class User < ApplicationRecord
           .limit(n)
     end
 
-    def future_job_applications
+    def current_job_applications
       self.job_applications.where("start_date >= ?", Time.now.to_date)
                   .order("start_date")
     end
 
-    def past_job_applications
+    def expired_job_applications
       self.job_applications.where("start_date < ?", Time.now.to_date)
                   .order("start_date DESC")
     end

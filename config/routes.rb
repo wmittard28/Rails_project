@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#registration'
+  root 'home#welcome'
   get  '/about' => 'home#about'
 
   get    '/home'                 => 'sessions#index'

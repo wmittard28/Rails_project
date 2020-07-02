@@ -6,7 +6,7 @@
     font-weight: bold;
     margin: 0;
     padding: 0 25px 50px;
-    width: 627px;
+    width: 1100px;
     /* width value fills container and provides 25px-gap between floats */
   }
 
@@ -25,7 +25,7 @@
   #homepage-title-container h1 {
     box-sizing: border-box;
     display: block;
-    color: rgb(29, 134, 219);;
+    color: rgb(0, 4, 7);;
     font-size: 90px;
     font-weight: bold;
     margin: 0 auto;
