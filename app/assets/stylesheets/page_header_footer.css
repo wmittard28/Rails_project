@@ -21,17 +21,17 @@
   #header-logo-container {
     box-sizing: border-box;
     float: left;
-    color: rgb(125, 125, 125);
-    font-size: 32px;
-    font-weight: normal;
+    color: rgb(244, 246, 248);
+    font-size: 26px;
+    font-weight: bold;
     margin: 0;
-    padding: 20px 30px 0 0;
+    padding: 10px 30px 0 0;
   }
 
   #header-navbar-container {
     box-sizing: border-box;
     float: left;
-    color: rgb(125, 125, 125);
+    color:  rgb(29, 134, 219);
     font-size: 16px;
     font-weight: normal;
     margin: 0;
@@ -41,11 +41,11 @@
   #header-login-logout-container {
     box-sizing: border-box;
     float: right;
-    color: rgb(125, 125, 125);
+    color: rgb(253, 251, 251);
     font-size: 16px;
     font-weight: normal;
     margin: 0;
-    padding: 32px 0 0;
+    padding: 22px 0 0;
   }
 
   .header-link {
@@ -57,26 +57,26 @@
     padding: 0;
   }
   .header-link a:link, .header-link a:visited {
-    color: rgb(255, 255, 255);
+    color: rgb(244, 246, 248);
     text-decoration: none;
   }
   .header-link a:hover, .header-link a:active {
-    color: rgb(125, 125, 125);
+    color: rgb(244, 246, 248);
   }
 
   .footer-link {
     box-sizing: border-box;
     display: inline-block;
-    color: rgb(40, 40, 40);
+    color: rgb(119, 121, 122);
     font-weight: normal;
     margin: 0;
     padding: 0;
   }
   .footer-link a:link, .footer-link a:visited {
-    color: rgb(40, 40, 40);
+    color: rgb(119, 121, 122);
     text-decoration: none;
   }
   .footer-link a:hover, .footer-link a:active {
-    color: rgb(0, 125, 255);
+    color: rgb(119, 121, 122);
     text-decoration: underline;
   }

@@ -9,9 +9,13 @@
 
 <% if logged_in? %>
 
-  <div id="header-container" class="clearfix">
-
-    <div id="header-logo-container">
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+    AppHub
+  </a>
+  <div id="header-logo-container">
       <div class="header-link"><%= link_to("AppHub", home_path, :class => "logo-font") %></div>
     </div>
 
@@ -26,24 +30,26 @@
       &nbsp; &nbsp; &nbsp;
       <div class="header-link"><%= link_to("Sign out", logout_path, :method => :delete) %></div>
     </div>
+</nav>
 
-  </div>
+
 
 <% else %>
 
-  <div id="header-container" class="clearfix">
+<nav class="navbar navbar-light bg-primary text-white">
+  <a class="navbar-brand text-white" href="/registration">
+    <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+    AppHub
+  </a>
 
-    <div id="header-logo-container">
-      <div class="header-link"><%= link_to("AppHub", root_path, :class => "logo-font") %></div>
-    </div>
-
-    <div id="header-login-logout-container">
+    <div class="nav-item">
       <div class="header-link"><%= link_to("Log In", login_path) %></div>
       &nbsp;or&nbsp;
       <div class="header-link"><%= link_to("Sign Up", signup_path) %></div>
     </div>
 
-  </div>
+
+</nav>
 
 <% end %>
 

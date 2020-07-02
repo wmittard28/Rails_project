@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get    '/home'                 => 'sessions#index'
   get    '/login'                => 'sessions#new'
-  get 'signin_with_google', to: redirect('/auth/google_oauth2'), as: 'google_signup'
+  get 'google_signup', to: redirect('/auth/google_oauth2'), as: 'google_signup'
   post   '/sessions'             => 'sessions#create'
   delete '/logout'               => 'sessions#destroy'
 

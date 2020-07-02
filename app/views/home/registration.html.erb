@@ -6,21 +6,20 @@
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     </head>
     <body>
+    <br><br>
 
-<div class="float-content-left-container">
+<div class="jumbotron float-content-left-container">
+
 
   <div id="homepage-title-container">
-    <h1>JobAppU</h1>
-  </div>
-
-  <div id="homepage-quote-container">
-    <h2>Never miss a step of the way</h2>
+    <h2>Welcome to AppHub</h2>
+    <p>___________________________________________</p>
   </div>
 
   <div id="homepage-description-container">
     <p>
-      Web application designed for those who are passionate<br>
-      about organization.
+      Our application is designed for you to track your job applications
+      and esure that you get the job you deserve!
     </p>
   </div>
 
@@ -29,11 +28,8 @@
 <div class="float-content-right-container">
   <div class="form-container">
 
-    <div class="form-header-container">
-      <h1>Create an Account</h1>
-    </div>
-
     <div class="form-body-container">
+    <h2> Create Account </h2>
       <%= form_for @user do |f| %>
         <%= render :partial => "users/signup_form", :locals => {:f => f} %>
         <%= f.submit "Sign up", :class => "form-submit-btn" %>

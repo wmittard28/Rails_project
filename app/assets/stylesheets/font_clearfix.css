@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Arizonia');
+@import url('https://fonts.googleapis.com/css?family=Notable');
 
 * {
   font-family: Arial, Helvetica, sans-serif;
@@ -13,7 +13,7 @@
  }
 
 .logo-font {
-  font-family: 'Arizonia', cursive;
+  font-family: 'Notable', block;
   margin: 0;
   padding: 0 20px 0 0;
 }

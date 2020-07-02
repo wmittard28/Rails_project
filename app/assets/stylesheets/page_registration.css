@@ -1,7 +1,7 @@
 .float-content-left-container {
     box-sizing: border-box;
     float: left;
-    color: rgb(40, 40, 40);
+    color: rgb(29, 134, 219);;
     font-size: 14px;
     font-weight: bold;
     margin: 0;
@@ -13,7 +13,7 @@
   .float-content-right-container {
     box-sizing: border-box;
     float: right;
-    color: rgb(40, 40, 40);
+    color: rgb(29, 134, 219);;
     font-size: 14px;
     font-weight: bold;
     margin: 0;
@@ -25,28 +25,19 @@
   #homepage-title-container h1 {
     box-sizing: border-box;
     display: block;
-    color: rgb(40, 40, 40);
+    color: rgb(29, 134, 219);;
     font-size: 90px;
     font-weight: bold;
     margin: 0 auto;
     padding: 64px 0 0;
   }
 
-  #homepage-quote-container h2 {
-    box-sizing: border-box;
-    display: block;
-    color: rgb(125, 125, 125);
-    font-size: 32px;
-    font-weight: bold;
-    margin: 0 auto 40px;
-    padding: 0;
-  }
 
   #homepage-description-container p {
     box-sizing: border-box;
     display: block;
-    color: rgb(125, 125, 125);
-    font-size: 18px;
+    color: rgb(7, 6, 6);
+    font-size: 20px;
     font-weight: normal;
     margin: 0 auto;
     padding: 0;
