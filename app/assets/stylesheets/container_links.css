@@ -1,0 +1,53 @@
+.link-body-container {
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    display: block;
+    box-shadow: 0 0 25px rgba(0,0,0,.15);
+    border: 1px solid rgb(175, 175, 175);
+    border-radius: 5px;
+    color: rgb(40, 40, 40);
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 21px;
+    margin: 10px auto 0;
+    padding: 0;
+  }
+  .link-body-container:hover {
+    box-shadow: 0 0 25px rgba(0,0,0,.3);
+  }
+  .link-body-container p {
+    margin: 0;
+    padding: 0;
+  }
+  .link-body-container a:link, .link-body-container a:visited {
+    color: rgb(40, 40, 40);
+    text-decoration: none;
+  }
+  .link-body-container a:hover, .link-body-container a:active {
+    color: rgb(0, 125, 255);
+  }
+
+  .link-primary-subcontainer {
+    box-sizing: border-box;
+    display: block;
+    color: rgb(40, 40, 40);
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .link-secondary-subcontainer {
+    box-sizing: border-box;
+    display: none;
+    float: right;
+    color: rgb(40, 40, 40);
+    font-size: 14px;
+    font-weight: normal;
+    margin: 20px 20px 0 0;
+    padding: 0;
+  }
+  .link-body-container:hover .link-secondary-subcontainer {
+    display: block;
+    float: right;
+  }

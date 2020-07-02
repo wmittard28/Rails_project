@@ -1,0 +1,7 @@
+<div class="link-secondary-subcontainer">
+  <p><%= link_to("Preview", job_application_path(job_application), :class => "job_application-notes-index") %></p>
+  <% if user == current_user %>
+    <p><%= link_to("Delete", job_application_path(job_application), :method => :delete, :data => {:confirm => "Are you sure?"}) %></p>
+    <p><%= link_to("Edit", edit_job_application_path(job_application)) %></p>
+  <% end %>
+</div>

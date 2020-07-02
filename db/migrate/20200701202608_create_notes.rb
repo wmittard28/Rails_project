@@ -1,6 +1,6 @@
-class CreateJobNotes < ActiveRecord::Migration[6.0]
+class CreateNotes < ActiveRecord::Migration[6.0]
   def change
-    create_table :job_notes do |t|
+    create_table :notes do |t|
       t.belongs_to :job_application, index: true
       t.string :title
       t.text :content

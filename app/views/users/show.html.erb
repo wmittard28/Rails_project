@@ -1,0 +1,21 @@
+<div class="content-container">
+
+  <div class="content-header-container">
+    <h1><%= current_user.username %></h1>
+  </div>
+
+  <div class="content-body-container">
+    <table>
+      <% current_user.public_attributes.each do |attribute, value| %>
+        <tr>
+          <td class="td-header"><%= "#{attribute}:" %></td>
+          <td><%= value.to_s %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <%= link_to("Edit account", edit_user_path(current_user), :class => "form-submit-btn") %>
+  <%= button_to("Delete account", user_path(current_user), :method => :delete, :class => "form-submit-btn-red", :data => {:confirm => "Are you sure?"}) %>
+
+</div>

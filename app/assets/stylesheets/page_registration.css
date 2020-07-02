@@ -1,0 +1,53 @@
+.float-content-left-container {
+    box-sizing: border-box;
+    float: left;
+    color: rgb(40, 40, 40);
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 25px 50px;
+    width: 627px;
+    /* width value fills container and provides 25px-gap between floats */
+  }
+
+  .float-content-right-container {
+    box-sizing: border-box;
+    float: right;
+    color: rgb(40, 40, 40);
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    width: 358px;
+    /* width value sets form-body-container at 960px-mark on right edge */
+  }
+
+  #homepage-title-container h1 {
+    box-sizing: border-box;
+    display: block;
+    color: rgb(40, 40, 40);
+    font-size: 90px;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 64px 0 0;
+  }
+
+  #homepage-quote-container h2 {
+    box-sizing: border-box;
+    display: block;
+    color: rgb(125, 125, 125);
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0 auto 40px;
+    padding: 0;
+  }
+
+  #homepage-description-container p {
+    box-sizing: border-box;
+    display: block;
+    color: rgb(125, 125, 125);
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0 auto;
+    padding: 0;
+  }

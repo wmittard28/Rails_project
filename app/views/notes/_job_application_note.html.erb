@@ -1,0 +1,5 @@
+<a href="<%= new_job_application_note_path(@note.job_application, @note) %>" class="link-primary-subcontainer">
+  <p><%= @note.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%d %b %Y at %l:%M %p ET") %></p>
+  <p><span class="make-bold"><%= note.title %></span></p>
+  <p><span class="make-italic"><%= truncate(note.content, :length => 300, :separator => " ") %></span></p>
+</a>

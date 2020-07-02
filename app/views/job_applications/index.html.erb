@@ -1,0 +1,58 @@
+
+<div class="<%= @user == current_user ? "float-content-left-container" : "content-container" %>">
+
+  <div class="content-header-container">
+
+    <% if @user != current_user %>
+      <h2 class="header-top">
+        <%= @user.username %>
+        <div><%= link_to("View by Company", comapanies_path(@user)) %></div>
+      </h2>
+    <% end %>
+
+    <h1 id="future_job_applications" class="<%= "left-align" if @user != current_user %>">Future Applications (<%= @user.future_job_applications.size.to_s %>)</h1>
+
+  </div>
+
+  <% @user.future_job_applications.each do |job_application| %>
+    <div class="link-body-container">
+      <%= render :partial => "delete_edit", :locals => {:job_application => job_application, :user => @user} %>
+      <%= render :partial => "link_to", :locals => {:job_application => job_application} %>
+    </div>
+  <% end %>
+
+  <div class="content-header-container">
+    <h1 id="past_job_applications" class="<%= "left-align" if @user != current_user %>">Past Applications (<%= @user.past_job_applications.size.to_s %>)</h1>
+  </div>
+
+  <% @user.past_job_applications.each do |job_application| %>
+    <div class="link-body-container">
+      <%= render :partial => "delete_edit", :locals => {:job_application => job_application, :user => @user} %>
+      <%= render :partial => "link_to", :locals => {:job_application => job_application} %>
+    </div>
+  <% end %>
+
+</div>
+
+<% if @user == current_user %>
+  <div class="float-content-right-container">
+    <div class="form-container">
+
+      <div class="form-header-container">
+        <h1>New Application</h1>
+      </div>
+
+      <% if @job_application.errors.any? %>
+        <%= render :partial => "shared/form_errors", :locals => {:obj => @job_application} %>
+      <% end %>
+
+      <div class="form-body-container">
+        <%= form_for(@job_application, :url => job_applications_path(current_user), :method => "post") do |f| %>
+          <%= render :partial => "job_application_form", :locals => {:f => f, :company => @job_application.company} %>
+          <%= f.submit "Create new application", :class => "form-submit-btn" %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+<% end %>

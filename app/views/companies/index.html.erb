@@ -1,0 +1,37 @@
+<div class="content-container">
+
+  <% if @user.companies.size < 1 %>
+
+    <div class="content-header-container">
+      <h1>Companies (0)</h1>
+    </div>
+    <%= link_to("Create a new application", job_applications_path(@user), :class => "form-submit-btn") if @user == current_user %>
+
+  <% else %>
+
+    <% @user.uniq_companies.each.with_index(1) do |company, i| %>
+
+      <div class="content-header-container">
+
+        <% if (i == 1) && (@user != current_user) %>
+          <h2 class="header-top">
+            <%= @user.username %>
+            <div><%= link_to("View by Date", job_applications_path(@user)) %></div>
+          </h2>
+        <% end %>
+
+        <h1 class="left-align"><%= company.name %></h1>
+
+      </div>
+
+      <% company.job_applications.where(:user => @user).order(:start_date => :desc).each do |job_application| %>
+        <div class="link-body-container">
+          <%= render :partial => "job_applications/delete_edit", :locals => {:job_application => job_application, :user => @user} %>
+          <%= render :partial => "job_applications/link_to", :locals => {:job_application => job_application} %>
+        </div>
+      <% end %>
+
+    <% end %>
+  <% end %>
+
+</div>

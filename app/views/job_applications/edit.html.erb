@@ -1,0 +1,18 @@
+<div class="form-container">
+
+  <div class="form-header-container">
+    <h1>Edit Application</h1>
+  </div>
+
+  <% if @job_application.errors.any? %>
+    <%= render :partial => "shared/form_errors", :locals => {:obj => @job_application} %>
+  <% end %>
+
+  <div class="form-body-container">
+    <%= form_for @job_application do |f| %>
+      <%= render :partial => "job_application_form", :locals => {:f => f, :company => @job_application.company} %>
+      <%= f.submit "Update", :class => "form-submit-btn" %>
+    <% end %>
+  </div>
+
+</div>

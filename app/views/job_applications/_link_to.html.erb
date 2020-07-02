@@ -1,0 +1,21 @@
+<a href="<%= job_application_path(job_application) %>" class="link-primary-subcontainer">
+
+  <p>
+    <%= job_application.start_date.to_time.strftime("%b %e, %Y") %>
+    <% if !!job_application.end_date %>
+      &ndash;
+      <%= job_application.end_date.to_time.strftime("%b %e, %Y") %>
+    <% end %>
+  </p>
+
+  <p><span class="make-bold"><%= job_application.company.name %></span></p>
+
+  <p><%= job_application.location.blank? ? "No Location?" : job_application.location %></p>
+
+  <p><%= job_application.position.blank? ? "No Position?" : job_application.position %></p>
+
+  <p><span class="make-bold"><%= job_application.status.blank? ? "Status Undertermined?" : job_application.status %></span></p>
+
+  <p><%= "#{job_application.notes.size} Application #{"Note".pluralize(job_application.notes.size)}"%></p>
+
+</a>

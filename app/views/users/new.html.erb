@@ -6,31 +6,33 @@
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     </head>
     <body>
-    <title>JobAppU</title>
-    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<div class="form-container">
 
-  <body>
-    <div id="header">
-      <div class="container">
-        <%= render "layouts/header" %>
-      </div>
-    </div>
-    <div id="content">
-      <div class="container clearfix">
-        <%= yield %>
-      </div>
-    </div>
-    <div id="footer">
-      <div class="container">
-        <%= render "layouts/footer" %>
-      </div>
-    </div>
-  </body>
-</html>
+  <div class="form-header-container">
+    <h1>Sign up for JobAppU</h1>
+  </div>
+
+  <% if @user.errors.any? %>
+    <%= render :partial => "shared/form_errors", :locals => {:obj => @user} %>
+  <% end %>
+
+  <div class="form-body-container">
+    <%= form_for @user do |f| %>
+      <%= render :partial => "signup_form", :locals => {:f => f} %>
+      <%= f.submit "Sign up", :class => "form-submit-btn" %>
+    <% end %>
+  </div>
+
+  <div class="form-divider-container">
+    <p>or</p>
+  </div>
+
+  <div class="form-body-container">
+  <%= link_to "Log in with Google", "/google_signup", :class => "btn btn-primary" %>
+  </div>
+
+</div>
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

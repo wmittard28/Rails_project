@@ -1,0 +1,197 @@
+.form-container {
+    box-sizing: border-box;
+    display: block;
+    color: rgb(40, 40, 40);
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 auto;
+    padding: 0 16px 50px;
+    width: 340px;
+  }
+
+  .form-header-container {
+    box-sizing: border-box;
+    display: block;
+    color: rgb(40, 40, 40);
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 auto 20px;
+    padding: 30px 0 0;
+    text-align: center;
+    width: 308px;
+  }
+  .form-header-container h1 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .form-error-container {
+    background-color: rgb(255, 225, 225);
+    box-sizing: border-box;
+    display: block;
+    box-shadow: 0 0 25px rgba(0,0,0,.15);
+    border: 1px solid rgb(255, 225, 225);
+    border-radius: 5px;
+    color: rgb(125, 0, 0);
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 21px;
+    margin: 0 auto 20px;
+    padding: 20px;
+    text-align: left;
+    width: 308px;
+  }
+  .form-error-container p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .form-body-container {
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    display: block;
+    box-shadow: 0 0 25px rgba(0,0,0,.15);
+    border: 1px solid rgb(175, 175, 175);
+    border-radius: 5px;
+    color: rgb(40, 40, 40);
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 auto;
+    padding: 20px;
+    width: 308px;
+  }
+
+  .form-divider-container p {
+    box-sizing: border-box;
+    display: block;
+    color: rgb(125, 125, 125);
+    font-size: 14px;
+    font-weight: normal;
+    margin: 10px auto;
+    padding: 0;
+    text-align: center;
+    width: 308px;
+  }
+
+  .form-label {
+    box-sizing: border-box;
+    display: block;
+    color: rgb(40, 40, 40);
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 auto 7px;
+    padding: 0;
+    min-height: 21px;
+    height: 21px;
+    width: 266px;
+  }
+
+  .form-field {
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    display: block;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.15);
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 3px;
+    color: rgb(40, 40, 40);
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 auto 14px;
+    padding: 6px 8px;
+    min-height: 34px;
+    height: 34px;
+    width: 266px;
+  }
+  .field_with_errors .form-field {
+    border: 1px solid rgb(255, 0, 0);
+  }
+
+  .form-submit-btn {
+    background-color: rgb(40, 167, 69);
+    background-image: linear-gradient(-180deg, rgb(52,208,88) 0%, rgb(40,167,69) 90%);
+    box-sizing: border-box;
+    display: block;
+    border: 1px solid rgb(40, 167, 69);
+    border-radius: 3.5px;
+    cursor: default;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: normal;
+    margin: 20px auto 0;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    min-height: 34px;
+    height: 34px;
+    width: 266px;
+  }
+  .form-submit-btn:focus {
+    outline-color: rgb(40, 167, 69);
+  }
+  .form-submit-btn:hover {
+    background-color: rgb(36, 148, 61);
+    background-image: linear-gradient(-180deg, rgb(46,185,78) 0%, rgb(36,148,61) 90%);
+  }
+  .form-submit-btn:active {
+    background-color: rgb(27, 111, 46);
+    background-image: linear-gradient(-180deg, rgb(35,139,59) 0%, rgb(27,111,46) 90%);
+  }
+
+  .form-submit-btn-red {
+    background-color: rgb(167, 40, 69);
+    background-image: linear-gradient(-180deg, rgb(208,52,88) 0%, rgb(167,40,69) 90%);
+    box-sizing: border-box;
+    display: block;
+    border: 1px solid rgb(167, 40, 69);
+    border-radius: 3.5px;
+    cursor: default;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: normal;
+    margin: 20px auto 0;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    min-height: 34px;
+    height: 34px;
+    width: 266px;
+  }
+  .form-submit-btn-red:focus {
+    outline-color: rgb(167, 40, 69);
+  }
+  .form-submit-btn-red:hover {
+    background-color: rgb(148, 36, 61);
+    background-image: linear-gradient(-180deg, rgb(185,46,78) 0%, rgb(148,36,61) 90%);
+  }
+  .form-submit-btn-red:active {
+    background-color: rgb(111, 27, 46);
+    background-image: linear-gradient(-180deg, rgb(139,35,59) 0%, rgb(111,27,46) 90%);
+  }
+
+  .form-github-login-btn {
+    background-color: rgb(60, 60, 60);
+    background-image: linear-gradient(-180deg, rgb(100,100,100) 0%, rgb(60,60,60) 90%);
+    box-sizing: border-box;
+    display: block;
+    border: 1px solid rgb(60, 60, 60);
+    border-radius: 3.5px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 auto;
+    padding: 0;
+    min-height: 34px;
+    height: 34px;
+    width: 266px;
+  }
+  .form-github-login-btn:focus {
+    outline-color: rgb(60, 60, 60);
+  }
+  .form-github-login-btn:hover {
+    background-color: rgb(53, 53, 53);
+    background-image: linear-gradient(-180deg, rgb(89,89,89) 0%, rgb(53,53,53) 90%);
+  }
+  .form-github-login-btn:active {
+    background-color: rgb(40, 40, 40);
+    background-image: linear-gradient(-180deg, rgb(67,67,67) 0%, rgb(40,40,40) 90%);
+  }

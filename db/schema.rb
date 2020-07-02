@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_01_182227) do
+ActiveRecord::Schema.define(version: 2020_07_02_134248) do
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "job_applications", force: :cascade do |t|
     t.integer "user_id"
@@ -20,23 +27,18 @@ ActiveRecord::Schema.define(version: 2020_07_01_182227) do
     t.date "end_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "company_id"
+    t.string "location"
     t.index ["user_id"], name: "index_job_applications_on_user_id"
   end
 
-  create_table "job_companies", force: :cascade do |t|
-    t.string "name"
-    t.string "slug"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "job_notes", force: :cascade do |t|
+  create_table "notes", force: :cascade do |t|
     t.integer "job_application_id"
     t.string "title"
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["job_application_id"], name: "index_job_notes_on_job_application_id"
+    t.index ["job_application_id"], name: "index_notes_on_job_application_id"
   end
 
   create_table "users", force: :cascade do |t|

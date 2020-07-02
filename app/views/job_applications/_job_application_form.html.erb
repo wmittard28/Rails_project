@@ -1,0 +1,19 @@
+<%= f.label :start_date, "Application Date", :class => "form-label" %>
+<%= f.date_field :start_date, :placeholder => "yyyy-mm-dd", :class => "form-field" %>
+
+<%= f.label :end_date, "Expiration/Due Date (opt)", :class => "form-label" %>
+<%= f.date_field :end_date, :placeholder => "yyyy-mm-dd", :class => "form-field" %>
+
+<%= f.fields_for(:company, company) do |c| %>
+  <%= c.label :name, "Company Name", :class => "form-label" %>
+  <%= c.text_field :name, :class => "form-field" %>
+<% end %>
+
+<%= f.label :location, "Job location?", :class => "form-label" %>
+<%= f.text_field :location, :class => "form-field" %>
+
+<%= f.label :position, "Position applied for?", :class => "form-label" %>
+<%= f.text_field :position, :class => "form-field" %>
+
+<%= f.label :status, "Status of application?", :class => "form-label" %>
+<%= f.text_field :status, :class => "form-field" %>

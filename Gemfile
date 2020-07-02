@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'yarn'
 gem 'bcrypt'
 gem 'bootstrap'
+gem 'omniauth-google-oauth2'
+gem 'dotenv-rails'
+gem 'jquery-rails'

@@ -1,0 +1,60 @@
+table {
+    color: rgb(40, 40, 40);
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+  }
+  table.add-padding-tb {
+    padding: 20px 0;
+  }
+
+  th {
+    color: rgb(40, 40, 40);
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 0 0 5px;
+    text-align: center;
+  }
+
+  td {
+    color: rgb(40, 40, 40);
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+  }
+  td a:link, td a:visited {
+    color: rgb(40, 40, 40);
+    text-decoration: none;
+  }
+  td a:hover, td a:active {
+    color: rgb(0, 125, 255);
+    text-decoration: underline;
+  }
+  .link-body-container:hover td a:link, .link-body-container:hover td a:visited {
+    color: rgb(0, 125, 255);
+    text-decoration: none;
+  }
+  .link-body-container:hover td a:hover, .link-body-container:hover td a:active {
+    color: rgb(0, 125, 255);
+    text-decoration: underline;
+  }
+
+  .td-align-center {
+    text-align: center;
+  }
+
+  .td-header {
+    padding-right: 10px;
+    font-weight: bold;
+  }
+
+  .custom-col {
+    padding-left: 40px;
+    padding-right: 20px;
+    text-align: left;
+  }
