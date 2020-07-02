@@ -6,7 +6,7 @@
     font-weight: normal;
     margin: 0 auto;
     padding: 0 16px 50px;
-    width: 1040px;
+    width: 340px;
   }
 
   .form-header-container {
@@ -184,14 +184,14 @@
     height: 34px;
     width: 266px;
   }
-  .form-github-login-btn:focus {
+  .form-login-login-btn:focus {
     outline-color: rgb(60, 60, 60);
   }
-  .form-github-login-btn:hover {
+  .form-google-login-btn:hover {
     background-color: rgb(53, 53, 53);
     background-image: linear-gradient(-180deg, rgb(89,89,89) 0%, rgb(53,53,53) 90%);
   }
-  .form-github-login-btn:active {
+  .form-google-login-btn:active {
     background-color: rgb(40, 40, 40);
     background-image: linear-gradient(-180deg, rgb(67,67,67) 0%, rgb(40,40,40) 90%);
   }

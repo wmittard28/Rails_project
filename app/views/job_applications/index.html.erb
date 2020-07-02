@@ -10,7 +10,7 @@
       </h2>
     <% end %>
 
-    <h1 id="current_job_applications" class="<%= "left-align" if @user != current_user %>">Current Job Applications (<%= @user.current_job_applications.size.to_s %>)</h1>
+    <button type="button" class="btn btn-success"><h3 id="current_job_applications" class="<%= "left-align" if @user != current_user %>">Current Job Applications (<%= @user.current_job_applications.size.to_s %>)</h3></button>
 
   </div>
 
@@ -22,7 +22,7 @@
   <% end %>
 
   <div class="content-header-container">
-    <h1 id="expired_job_applications" class="<%= "left-align" if @user != current_user %>">Expired Job Applications (<%= @user.expired_job_applications.size.to_s %>)</h1>
+  <button type="button" class="btn btn-danger"><h3 id="expired_job_applications" class="<%= "left-align" if @user != current_user %>">Expired Job Applications (<%= @user.expired_job_applications.size.to_s %>)</h3></button>
   </div>
 
   <% @user.expired_job_applications.each do |job_application| %>
@@ -38,7 +38,7 @@
   <div class="float-content-right-container">
     <div class="form-container">
 
-      <div class="form-header-container">
+      <div class="form-header-container" style="text-align: center">
         <h1>New Application</h1>
       </div>
 
@@ -59,7 +59,7 @@
 
 <!-- CSS -->
 <style type="text/css">
-  html, body { height: 1000%;}
+  html, body { height: 5000%;}
   body {
     background-image: url(https://www.solidbackgrounds.com/images/1920x1080/1920x1080-light-sky-blue-solid-color-background.jpg);
     background-repeat: no-repeat;

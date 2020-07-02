@@ -1,5 +1,5 @@
 html, body {
-    background-color: rgb(250, 250, 250);
+
     box-sizing: border-box;
     display: block;
     margin: 0;
@@ -13,7 +13,6 @@ html, body {
   }
 
   #header {
-    background-color: rgb(29, 134, 219);;
     box-sizing: border-box;
     display: block;
     color: rgb(255, 255, 255);
@@ -27,7 +26,18 @@ html, body {
     width: 100%;
   }
 
-  
+  #content {
+    height: 100%;
+    box-sizing: border-box;
+    display: block;
+    color: rgb(40, 40, 40);
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+  }
 
 
   .container {

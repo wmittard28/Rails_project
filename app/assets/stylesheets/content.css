@@ -1,7 +1,7 @@
 .content-container {
     box-sizing: border-box;
     display: block;
-    color: rgb(40, 40, 40);
+    color:  rgb(252, 249, 249);
     font-size: 14px;
     font-weight: normal;
     margin: 0 auto;
@@ -11,7 +11,7 @@
   .content-header-container {
     box-sizing: border-box;
     display: block;
-    color: rgb(40, 40, 40);
+    color: rgb(252, 249, 249);
     font-size: 14px;
     font-weight: bold;
     margin: 0 auto 20px;
@@ -23,10 +23,10 @@
     padding: 0;
   }
   h1.left-align {
-    text-align: right;
+    text-align: left;
   }
   .content-header-container h2, .content-header-container h3 {
-    color: rgb(40, 40, 40);
+    color: rgb(252, 249, 249);
     margin: 5px 0 0;
     padding: 0;
     text-align: left;
