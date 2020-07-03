@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Status.create(name: "Offered")
+Status.create(name: "Recieved")
+Status.create(name: "Active")
+Status.create(name: "Expired")
+Status.create(name: "In Progress")

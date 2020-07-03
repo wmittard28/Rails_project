@@ -10,7 +10,7 @@
       </h2>
     <% end %>
 
-    <button type="button" class="btn btn-success"><h3 id="current_job_applications" class="<%= "left-align" if @user != current_user %>">Current Job Applications (<%= @user.current_job_applications.size.to_s %>)</h3></button>
+    <button type="button" class="btn btn-success"><h3 id="current_job_applications" class="<%= "left-align" if @user != current_user %>">Current Job Applications -<%= @user.current_job_applications.size.to_s %></h3></button>
 
   </div>
 
@@ -22,7 +22,7 @@
   <% end %>
 
   <div class="content-header-container">
-  <button type="button" class="btn btn-danger"><h3 id="expired_job_applications" class="<%= "left-align" if @user != current_user %>">Expired Job Applications (<%= @user.expired_job_applications.size.to_s %>)</h3></button>
+  <button type="button" class="btn btn-danger"><h3 id="expired_job_applications" class="<%= "left-align" if @user != current_user %>">Expired Job Applications -<%= @user.expired_job_applications.size.to_s %></h3></button>
   </div>
 
   <% @user.expired_job_applications.each do |job_application| %>
@@ -61,7 +61,7 @@
 <style type="text/css">
   html, body { height: 5000%;}
   body {
-    background-image: url(https://www.solidbackgrounds.com/images/1920x1080/1920x1080-light-sky-blue-solid-color-background.jpg);
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b1/Grey_background.jpg);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;}

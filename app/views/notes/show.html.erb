@@ -3,7 +3,7 @@
   <div class="content-header-container">
 
     <% if @note.user != current_user %>
-      <h2 class="header-top">
+      <h2 class="header-top ">
         <%= link_to(@note.user.username, job_applications_path(@note.user)) %>
         <div><%= link_to("Notes for #{@note.company.name}", job_application_path(@note.job_application)) %></div>
       </h2>
@@ -11,7 +11,7 @@
       <h2 class="header-top"><%= link_to("Notes for #{@note.company.name}", job_application_path(@note.job_application)) %></h2>
     <% end %>
 
-    <h1 class="left-align"><%= @note.title %></h1>
+    <h1 class="left-align" style="text-align:center"><%= @note.title %></h1>
     <h3>Created on <%= @note.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%d %b %Y at %l:%M %p ET") %></h3>
 
   </div>
@@ -32,9 +32,9 @@
 
 <!-- CSS -->
 <style type="text/css">
-  html, body { height: 1000%;}
+  html, body { height: 5000%;}
   body {
-    background-image: url(https://www.solidbackgrounds.com/images/1920x1080/1920x1080-light-sky-blue-solid-color-background.jpg);
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b1/Grey_background.jpg);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;}

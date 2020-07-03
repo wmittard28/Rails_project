@@ -10,21 +10,19 @@
 <% if logged_in? %>
 
 <!-- Image and text -->
-<nav class="navbar navbar-light bg-secondary text-white">
-  <a class="navbar-brand text-white" href="/welcome">
+<nav class="navbar navbar-light bg-primary text-white">
+  <a class="navbar-brand text-white font-weight-bold" href="/welcome">
     <img src="images/AppHub1.jpg" width="35" height="35" class="d-inline-block align-top" alt="" loading="lazy">
     AppHub
   </a>
 
     <div class="nav-item">
       <div class="header-link"><%= link_to("My Applications", job_applications_path(current_user)) %></div>
-      &nbsp; &nbsp; &nbsp;
+      &nbsp;
       <div class="header-link"><%= link_to("All Companies", companies_path(current_user)) %></div>
-    </div>
-
-    <div class="nav-item">
+      &nbsp;
       <div class="header-link"><%= link_to("Account", user_path(current_user)) %></div>
-      &nbsp; &nbsp; &nbsp;
+      &nbsp;
       <div class="header-link"><%= link_to("Sign out", logout_path, :method => :delete) %></div>
     </div>
 </nav>
@@ -33,8 +31,8 @@
 
 <% else %>
 
-<nav class="navbar navbar-light bg-secondary text-white">
-  <a class="navbar-brand text-white" href="/registration">
+<nav class="navbar navbar-light bg-primary text-white">
+  <a class="navbar-brand text-white font-weight-bold" href="/registration">
     <img src="images/AppHub1.jpg" width="35" height="35" class="d-inline-block align-top" alt="" loading="lazy">
      AppHub
   </a>

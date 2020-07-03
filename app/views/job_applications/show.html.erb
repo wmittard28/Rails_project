@@ -1,22 +1,25 @@
 <div class="content-container">
+<br>
 
-  <div class="content-header-container">
+<div class="badge badge-dark text-wrap" style="width: 66rem; text-align: center">
 
     <% if @job_application.user != current_user %>
-      <h2 class="header-top"><%= link_to(@job_application.user.username, job_applications_path(@job_application.user)) %></h2>
+      <h4 class="header-top"><%= link_to(@job_application.user.username, job_applications_path(@job_application.user)) %></h4>
     <% end %>
 
-    <h1 class="left-align">Notes for <%= @job_application.company.name %></h1>
+    <h1 class="left-align" style="text-align: center">Notes for <%= @job_application.company.name %></h1>
 
-    <h3>
+
+    <h6>
       <%= @job_application.start_date.to_time.strftime("%b %e, %Y") %>
       <% if !!@job_application.end_date %>
         &ndash;
         <%= @job_application.end_date.to_time.strftime("%b %e, %Y") %>
       <% end %>
-    <h3>
+    <h6>
 
   </div>
+  <br><br>
 
   <% @job_application.notes.order(:created_at => :desc).each do |note| %>
     <div class="link-body-container">
@@ -33,9 +36,9 @@
 
 <!-- CSS -->
 <style type="text/css">
-  html, body { height: 3000%;}
+  html, body { height: 5000%;}
   body {
-    background-image: url(https://www.solidbackgrounds.com/images/1920x1080/1920x1080-light-sky-blue-solid-color-background.jpg);
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b1/Grey_background.jpg);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;}

@@ -6,19 +6,17 @@
       &ndash;
       <%= job_application.end_date.to_time.strftime("%b %e, %Y") %>
     <% end %>
+    <p>==============================================================</p>
   </p>
 
-  <p><span class="make-bold"><%= job_application.company.name %></span></p>
+  <p><span class="make-bold badge badge-primary text-wrap">Company Name:</span> <span class="make-bold"><%= job_application.company.name %></span></p>
 
-  <p><%= job_application.location.blank? ? "No Location?" : job_application.location %></p>
+  <p><span class="make-bold badge badge-primary text-wrap">Location:</span> <span class="make-bold"><%= job_application.location.blank? ? "No Location?" : job_application.location %></p>
 
-  <p><%= job_application.position.blank? ? "No Position?" : job_application.position %></p>
+  <p><span class="make-bold badge badge-primary text-wrap">Job Position:</span> <span class="make-bold"><%= job_application.position.blank? ? "No Position?" : job_application.position %></p>
 
-  <p><span class="make-bold"><%= job_application.status.blank? ? "Status Undertermined?" : job_application.status %></span></p>
+  <p><span class="make-bold badge badge-primary text-wrap">Application Status:</span> <span class="make-bold"><%= job_application.status.blank? ? "Status Undertermined?" : job_application.status %></span></p>
 
-  <p><%= "#{job_application.notes.size} Application #{"Note".pluralize(job_application.notes.size)}"%></p>
+  <p><span class="make-bold badge badge-primary text-wrap">Notes Created:</span> <span class="make-bold"><%= "#{job_application.notes.size} Application #{"Note".pluralize(job_application.notes.size)}"%></p>
 
 </a>
-
-
-
