@@ -24,6 +24,8 @@
       <div class="header-link"><%= link_to("Account", user_path(current_user)) %></div>
       &nbsp;
       <div class="header-link"><%= link_to("Sign out", logout_path, :method => :delete) %></div>
+      &nbsp;
+      <div class="header-link"><%= link_to("Company Rankings", home_path(current_user)) %></div>
     </div>
 </nav>
 
