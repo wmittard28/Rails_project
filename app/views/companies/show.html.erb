@@ -1,20 +1,17 @@
-<a href="<%= job_application_path(job_application) %>" class="link-primary-subcontainer">
+<div class="content-container">
 
-  <p>
-    <%= job_application.start_date.to_time.strftime("%b %e, %Y") %>
-    <% if !!job_application.end_date %>
-      &ndash;
-      <%= job_application.end_date.to_time.strftime("%b %e, %Y") %>
-    <% end %>
-  </p>
+  <div class="content-header-container">
+    <h1 class="left-align"><%= @company.name %></h1>
+  </div>
 
-  <p><span class="make-bold"><%= job_application.user.username %></span></p>
+  <% @company.job_applications.order(:start_date => :desc).each do |job_application| %>
+    <div class="link-body-container">
+      <%= render :partial => "job_applications/delete_edit", :locals => {:job_application => job_application, :user => job_application.user} %>
+      <%= render :partial => "link_to_job_application", :locals => {:job_application => job_application} %>
+    </div>
+  <% end %>
 
-  <p><%= job_application.position.blank? ? "No Position" : job_application.position %></p>
-
-  <p><%= "#{job_application.notes.size} Application #{"Note".pluralize(job_application.notes.size)}"%></p>
-
-</a>
+</div>
 
 <!-- CSS -->
 <style type="text/css">

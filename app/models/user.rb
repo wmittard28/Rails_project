@@ -26,12 +26,6 @@ class User < ApplicationRecord
       end
     end
 
-    def self.most_job_applications(n = 15)
-      self.left_joins(:companies)
-          .group(:username)
-          .order("COUNT(companies.id) DESC")
-          .limit(n)
-    end
 
     def current_job_applications
       self.job_applications.where("start_date >= ?", Time.now.to_date)
@@ -44,7 +38,7 @@ class User < ApplicationRecord
     end
 
     def public_attributes
-      self.attributes.except("id", "password_digest", "uid", "created_at", "updated_at")
+      self.attributes.except("id", "slug" "password_digest", "uid", "created_at", "updated_at")
     end
 
     def uniq_companies

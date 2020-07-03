@@ -12,31 +12,13 @@
       <% Company.most_popular.each.with_index(1) do |company, i| %>
         <tr>
           <td class="td-align-center"><%= i.to_s %></td>
-          <td class="custom-col"><%= link_to(company.name, company_path(company) %></td>
+          <td class="custom-col"><%= link_to(company.name, company_path(company))%></td>
           <td class="td-align-center"><%= company.job_applications.size.to_s %></td>
         </tr>
       <% end %>
     </table>
   </div>
 
-  <div class="content-header-container">
-    <h1>Users With Most Applications</h1>
-  </div>
-
-  <div class="link-body-container">
-    <table class="add-padding-tb">
-      <th>Rank</th>
-      <th class="custom-col">User</th>
-      <th>Total Applications</th>
-      <% User.most_job_applications.each.with_index(1) do |user, i| %>
-        <tr>
-          <td class="td-align-center"><%= i.to_s %></td>
-          <td class="custom-col"><%= link_to(user.username, job_applications_path(user)) %></td>
-          <td class="td-align-center"><%= user.job_applications.size.to_s %></td>
-        </tr>
-      <% end %>
-    </table>
-  </div>
 
 </div>
 

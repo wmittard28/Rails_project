@@ -1,10 +1,11 @@
-<div class="content-container">
+<div class="content-container" style="text-align: center">
+<br>
 
-  <div class="content-header-container">
-    <h1><%= current_user.username %></h1>
+ <div class="content-header-container badge badge-dark text-wrap">
+    <h1><%= current_user.username %>'s Account</h1>
   </div>
 
-  <div class="jumbotron content-body-container">
+  <div class="content-body-container">
     <table>
       <% current_user.public_attributes.each do |attribute, value| %>
         <tr>
