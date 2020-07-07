@@ -7,7 +7,7 @@
   <% @company.job_applications.order(:start_date => :desc).each do |job_application| %>
     <div class="link-body-container">
       <%= render :partial => "job_applications/delete_edit", :locals => {:job_application => job_application, :user => job_application.user} %>
-      <%= render :partial => "link_to_job_application", :locals => {:job_application => job_application} %>
+      <%= render :partial => "link_to_job_applications", :locals => {:job_application => job_application} %>
     </div>
   <% end %>
 

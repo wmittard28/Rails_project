@@ -38,7 +38,7 @@ class User < ApplicationRecord
     end
 
     def public_attributes
-      self.attributes.except("id", "slug" "password_digest", "uid", "created_at", "updated_at")
+      self.attributes.except("id", "slug", "password_digest", "uid", "created_at", "updated_at")
     end
 
     def uniq_companies

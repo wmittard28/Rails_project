@@ -23,7 +23,7 @@ class JobApplicationsController < ApplicationController
 
 
   def show
-    redirect_to job_applications_path(current_user) unless params_job_application_exists?
+    redirect_to job_applications_path(current_user) unless job_application_exists?
     respond_to do |format|
       format.html
       format.json { render :json => @job_application }
@@ -32,12 +32,12 @@ class JobApplicationsController < ApplicationController
 
 
   def edit
-    redirect_to job_applications_path(current_user) unless params_job_application_exists_and_belongs_to_current_user?
+    redirect_to job_applications_path(current_user) unless job_application_exists_and_belongs_to_current_user?
   end
 
 
   def update
-    redirect_to job_applications_path(current_user) unless params_job_application_exists_and_belongs_to_current_user?
+    redirect_to job_applications_path(current_user) unless job_application_exists_and_belongs_to_current_user?
     if job_application_dates_valid? && @job_application.update(job_application_params) then redirect_to job_applications_path(current_user)
     else render :edit and return
     end
@@ -45,7 +45,7 @@ class JobApplicationsController < ApplicationController
 
 
   def destroy
-    @job_application.destroy if params_job_application_exists_and_belongs_to_current_user?
+    @job_application.destroy if job_application_exists_and_belongs_to_current_user?
     redirect_to job_applications_path(current_user)
   end
 
@@ -55,11 +55,11 @@ class JobApplicationsController < ApplicationController
     params.require(:job_application).permit(:position, :location, :status, :start_date, :end_date, :company_attributes => [:name])
   end
 
-  def params_job_application_exists?
+  def job_application_exists?
     !!( @job_application = JobApplication.find_by(:id => params[:id]) )
   end
 
-  def params_job_application_exists_and_belongs_to_current_user?
+  def job_application_exists_and_belongs_to_current_user?
     @job_application.user_id == current_user.id if params_job_application_exists?
   end
 

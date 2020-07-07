@@ -8,10 +8,13 @@
     <% end %>
   </p>
 
-  <p><span class="make-bold"><%= job_application.user.username %></span></p>
+  <p><span class="make-bold badge badge-primary text-wrap">Username:</span> <span class="make-bold"><%= job_application.user.username %></span></p>
 
-  <p><%= job_application.purpose.blank? ? "No Position" : job_application.position %></p>
+<p><span class="make-bold badge badge-primary text-wrap">Position:</span> <span class="make-bold"><%= job_application.position.blank? ? "No Position" : job_application.position %></p>
 
-  <p><%= "#{job_application.notes.size} Application #{"Note".pluralize(job_application.notes.size)}"%></p>
+<p><span class="make-bold badge badge-primary text-wrap">Notes Created:</span> <span class="make-bold"><%= "#{job_application.notes.size} Application #{"Note".pluralize(job_application.notes.size)}"%></p>
 
 </a>
+
+
+
