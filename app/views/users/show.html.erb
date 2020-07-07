@@ -6,7 +6,7 @@
   </div>
 
   <div class="content-body-container">
-    <table>
+    <table class="table table-bordered">
       <% current_user.public_attributes.each do |attribute, value| %>
         <tr>
           <td class="td-header"><%= "#{attribute}:" %></td>
