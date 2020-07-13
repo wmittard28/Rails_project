@@ -15,17 +15,8 @@ class ApplicationController < ActionController::Base
       redirect_to root_path unless logged_in?
     end
 
-    private
-
-    def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation)
-    end
-
     def params_user_exists?
       !!( @user = User.find_by(:slug => params[:slug]) )
     end
 
-    def params_user_is_current_user?
-      @user == current_user if params_user_exists?
-    end
 end
