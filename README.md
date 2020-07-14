@@ -1,24 +1,12 @@
-# README
+WELCOME TO APPHUB
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+AppHub is a web application designed for users who are actively seeking employment and share a passion
+for organizational skills. This application allows you to track new or expired job applications and create notes, so that you can stay up to date throughout your job application process.
 
-Things you may want to cover:
+1. Clone this repository
 
-* Ruby version
+2. Run bundle install
 
-* System dependencies
+3. Run rake db:migrate
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+4. Run rails server 
