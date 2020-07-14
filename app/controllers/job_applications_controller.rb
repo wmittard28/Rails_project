@@ -2,15 +2,15 @@ class JobApplicationsController < ApplicationController
 
 
   def index
-    redirect_to job_applications_path(current_user) unless params_user_exists?
-    if params_user_is_current_user?
+    redirect_to job_applications_path(current_user) unless user_exists?
+    if user_is_current_user?
       @job_application = current_user.job_applications.build.tap{|job_application| job_application.build_company}
     end
   end
 
 
   def create
-    redirect_to job_applications_path(current_user) unless params_user_is_current_user?
+    redirect_to job_applications_path(current_user) unless user_is_current_user?
     @job_application = @user.job_applications.build(job_application_params)
     if job_application_dates_valid? && @job_application.save
       respond_to do |format|
@@ -32,12 +32,12 @@ class JobApplicationsController < ApplicationController
 
 
   def edit
-    redirect_to job_applications_path(current_user) unless job_application_exists_and_belongs_to_current_user?
+    redirect_to job_applications_path(current_user) unless job_application_belongs_to_current_user?
   end
 
 
   def update
-    redirect_to job_applications_path(current_user) unless job_application_exists_and_belongs_to_current_user?
+    redirect_to job_applications_path(current_user) unless job_application_belongs_to_current_user?
     if job_application_dates_valid? && @job_application.update(job_application_params) then redirect_to job_applications_path(current_user)
     else render :edit and return
     end
@@ -45,7 +45,7 @@ class JobApplicationsController < ApplicationController
 
 
   def destroy
-    @job_application.destroy if job_application_exists_and_belongs_to_current_user?
+    @job_application.destroy if job_application_belongs_to_current_user?
     redirect_to job_applications_path(current_user)
   end
 
@@ -59,8 +59,8 @@ class JobApplicationsController < ApplicationController
     !!( @job_application = JobApplication.find_by(:id => params[:id]) )
   end
 
-  def job_application_exists_and_belongs_to_current_user?
-    @job_application.user_id == current_user.id if params_job_application_exists?
+  def job_application_belongs_to_current_user?
+    @job_application.user_id == current_user.id if job_application_exists?
   end
 
   def job_application_dates_valid?

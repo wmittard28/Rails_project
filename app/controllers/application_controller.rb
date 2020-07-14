@@ -8,15 +8,25 @@ class ApplicationController < ActionController::Base
     end
 
     def logged_in?
-      !!current_user
+      !!current_user #converts to a boolean
     end
 
     def verify_user_is_logged_in
       redirect_to root_path unless logged_in?
     end
 
-    def params_user_exists?
+    def user_exists?
       !!( @user = User.find_by(:slug => params[:slug]) )
+    end
+
+    def user_is_current_user?
+      @user == current_user if params_user_exists?
+    end
+
+    private
+
+    def user_params
+      params.require(:user).permit(:username, :email, :password, :password_confirmation)
     end
 
 end

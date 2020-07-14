@@ -20,17 +20,17 @@ class UsersController < ApplicationController
 
 
   def show
-    redirect_to user_path(current_user) unless params_user_is_current_user?
+    redirect_to user_path(current_user) unless user_is_current_user?
   end
 
 
   def edit
-    redirect_to user_path(current_user) unless params_user_is_current_user?
+    redirect_to user_path(current_user) unless user_is_current_user?
   end
 
 
   def update
-    redirect_to user_path(current_user) unless params_user_is_current_user?
+    redirect_to user_path(current_user) unless user_is_current_user?
     if params[:other][:current_password].present? && !!@user.authenticate(params[:other][:current_password])
       if @user.update(user_params)
         redirect_to user_path(current_user)
@@ -46,19 +46,10 @@ class UsersController < ApplicationController
 
 
   def destroy
-    @user.destroy if params_user_is_current_user?
+    @user.destroy if user_is_current_user?
     reset_session
     redirect_to root_path
   end
 
-  private
-
-  def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
-  end
-
-  def params_user_is_current_user?
-    @user == current_user if params_user_exists?
-  end
 
 end
