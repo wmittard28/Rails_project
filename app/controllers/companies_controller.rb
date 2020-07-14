@@ -12,6 +12,6 @@ class CompaniesController < ApplicationController
     private
 
     def company_exists?
-      !!( @company = Company.find_by(:slug => params[:slug]) )
+      !!( @company = Company.find_by(:slug => params[:slug]) ) #company exists (true || false)
     end
   end

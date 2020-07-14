@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
-    skip_before_action :verify_user_is_logged_in
+    skip_before_action :verify_user_is_logged_in #Don't need to verify login for registration 
 
   # /
   # root_path
@@ -9,9 +9,5 @@ class HomeController < ApplicationController
     @user = User.new
   end
 
-  # /about
-  # about_path
-  def about
-  end
 
 end

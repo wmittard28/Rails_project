@@ -1,6 +1,7 @@
 class JobApplicationsController < ApplicationController
 
-
+  #/:slug/job_applications
+  #job_applications_path
   def index
     redirect_to job_applications_path(current_user) unless user_exists?
     if user_is_current_user?
@@ -8,7 +9,8 @@ class JobApplicationsController < ApplicationController
     end
   end
 
-
+  #/:slug/job_applications
+  # job_applications_path
   def create
     redirect_to job_applications_path(current_user) unless user_is_current_user?
     @job_application = @user.job_applications.build(job_application_params)
@@ -21,7 +23,8 @@ class JobApplicationsController < ApplicationController
     end
   end
 
-
+  # /job_applications/:id
+  # job_application_path
   def show
     redirect_to job_applications_path(current_user) unless job_application_exists?
     respond_to do |format|
@@ -30,12 +33,15 @@ class JobApplicationsController < ApplicationController
     end
   end
 
-
+  # /job_applications/:id/edit
+  # edit_travel_path
   def edit
     redirect_to job_applications_path(current_user) unless job_application_belongs_to_current_user?
   end
 
 
+  # /job_applications/:id
+  # job_application_path
   def update
     redirect_to job_applications_path(current_user) unless job_application_belongs_to_current_user?
     if job_application_dates_valid? && @job_application.update(job_application_params) then redirect_to job_applications_path(current_user)
@@ -44,6 +50,8 @@ class JobApplicationsController < ApplicationController
   end
 
 
+  # /job_applications/:id
+  # job_application_path
   def destroy
     @job_application.destroy if job_application_belongs_to_current_user?
     redirect_to job_applications_path(current_user)
