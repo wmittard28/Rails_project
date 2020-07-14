@@ -15,7 +15,8 @@ class NotesController < ApplicationController
       redirect_to job_applications_path(current_user) unless job_application_belongs_to_current_user?
       @note = @job_application.notes.build(note_params) #returns a new object of the collection type
       if @note.save then redirect_to job_application_path(@job_application)
-      else render :new and return
+      else
+        render :new 
       end
     end
 
@@ -24,10 +25,6 @@ class NotesController < ApplicationController
     # job_application_note_path(:job_application_id, :id)
     def show
       redirect_to job_applications_path(current_user) unless note_exists?
-
-      idx = @note.job_application.note_ids.index(@note.id)
-      @prev_note = (idx > 0) ? @note.job_application.notes[idx-1] : @note
-      @next_note = (idx < (@note.job_application.notes.size-1)) ? @note.job_application.notes[idx+1] : @note
       respond_with(@note)
     end
 
@@ -43,8 +40,10 @@ class NotesController < ApplicationController
     # job_application_note_path
     def update
       redirect_to job_applications_path(current_user) unless note_belongs_to_current_user?
-      if @note.update(note_params) then redirect_to job_application_note_path(@job_application, @note)
-      else render :edit and return
+      if @note.update(note_params)
+       redirect_to job_application_note_path(@job_application, @note)
+      else
+        render :edit
       end
     end
 

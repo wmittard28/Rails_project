@@ -17,9 +17,6 @@
   </div>
 
   <div class="content-body-container">
-    <%= link_to("Previous", job_application_note_path(@note.job_application, @prev_note), :class => "job_application-notes-prev") %>
-    &nbsp; &nbsp;
-    <%= link_to(  "Next"  , job_application_note_path(@note.job_application, @next_note), :class => "job_application-notes-next") %>
     <p><%= @note.content %></p>
   </div>
 

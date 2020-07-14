@@ -19,7 +19,7 @@ class JobApplicationsController < ApplicationController
     if job_application_dates_valid? && @job_application.save
       respond_with(@job_application, location: job_applications_path) #used location: to overrider redirect_to
     else
-      render :index and return
+      render :index
     end
   end
 
@@ -42,7 +42,8 @@ class JobApplicationsController < ApplicationController
   def update
     redirect_to job_applications_path(current_user) unless job_application_belongs_to_current_user?
     if job_application_dates_valid? && @job_application.update(job_application_params) then redirect_to job_applications_path(current_user)
-    else render :edit and return
+    else
+      render :edit 
     end
   end
 
@@ -69,7 +70,7 @@ class JobApplicationsController < ApplicationController
   end
 
   def job_application_dates_valid?
-    %w[start_date end_date].all? do |attribute| # %w cleans code for an array of strings 
+    %w[start_date end_date].all? do |attribute| # %w cleans code for an array of strings
       if job_application_params[attribute].blank?
         true
       else
