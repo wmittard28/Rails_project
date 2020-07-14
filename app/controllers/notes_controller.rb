@@ -1,22 +1,27 @@
 class NotesController < ApplicationController
   respond_to :html, :json
 
-
+    # /job_applications/:job_application_id/new
+    # new_job_application_note_path
     def new
       redirect_to job_applications_path(current_user) unless job_application_belongs_to_current_user?
-      @note = @job_application.notes.build
+      @note = @job_application.notes.build #returns a new object of the collection type
     end
 
 
+    # /job_applications/:job_application_id/notes
+    # job_application_notes_path
     def create
       redirect_to job_applications_path(current_user) unless job_application_belongs_to_current_user?
-      @note = @job_application.notes.build(note_params)
+      @note = @job_application.notes.build(note_params) #returns a new object of the collection type
       if @note.save then redirect_to job_application_path(@job_application)
       else render :new and return
       end
     end
 
 
+    # /job_applications/:job_application_id/notes/:id (nested route)
+    # job_application_note_path(:job_application_id, :id)
     def show
       redirect_to job_applications_path(current_user) unless note_exists?
 
@@ -27,11 +32,15 @@ class NotesController < ApplicationController
     end
 
 
+    # /job_applications/:job_application_id/:id/edit
+    # edit_job_application_note_path
     def edit
       redirect_to job_applications_path(current_user) unless note_belongs_to_current_user?
     end
 
 
+    # /job_applications/:job_application_id/notes/:id
+    # job_application_note_path
     def update
       redirect_to job_applications_path(current_user) unless note_belongs_to_current_user?
       if @note.update(note_params) then redirect_to job_application_note_path(@job_application, @note)
@@ -40,6 +49,8 @@ class NotesController < ApplicationController
     end
 
 
+    # /job_applications/:job_application_id/notes/:id
+    # job_application_note_path
     def destroy
       @note.destroy if note_exists_to_current_user?
       redirect_to job_application_path(@job_application)

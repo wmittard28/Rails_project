@@ -17,7 +17,7 @@ class JobApplicationsController < ApplicationController
     redirect_to job_applications_path(current_user) unless user_is_current_user?
     @job_application = @user.job_applications.build(job_application_params) #.build returns a new object of the collection type
     if job_application_dates_valid? && @job_application.save
-      respond_with(@job_application, location: job_applications_path) #used location: to overrider redirect_to 
+      respond_with(@job_application, location: job_applications_path) #used location: to overrider redirect_to
     else
       render :index and return
     end
@@ -61,7 +61,7 @@ class JobApplicationsController < ApplicationController
   end
 
   def job_application_exists?
-    !!( @job_application = JobApplication.find_by(:id => params[:id]) )
+    !!( @job_application = JobApplication.find_by(:id => params[:id]) ) #convert into boolean
   end
 
   def job_application_belongs_to_current_user?
@@ -69,7 +69,7 @@ class JobApplicationsController < ApplicationController
   end
 
   def job_application_dates_valid?
-    %w[start_date end_date].all? do |attribute|
+    %w[start_date end_date].all? do |attribute| # %w cleans code for an array of strings 
       if job_application_params[attribute].blank?
         true
       else
