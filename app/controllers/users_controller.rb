@@ -2,13 +2,15 @@ class UsersController < ApplicationController
 
     skip_before_action :verify_user_is_logged_in, :only => [:new, :create]
 
-
+  # /signup
+  # signup_path
   def new
     redirect_to home_path if logged_in?
     @user = User.new
   end
 
-
+  # /users
+  # users_path
   def create
     redirect_to home_path if logged_in?
     @user = User.new(user_params)
@@ -18,17 +20,20 @@ class UsersController < ApplicationController
     redirect_to job_applications_path(current_user)
   end
 
-
+  # /:slug (username)
+  # user_path
   def show
     redirect_to user_path(current_user) unless user_is_current_user?
   end
 
-
+  #/:slug/edit
+  #edit_user_path
   def edit
     redirect_to user_path(current_user) unless user_is_current_user?
   end
 
-
+  # /:slug
+  # user_path
   def update
     redirect_to user_path(current_user) unless user_is_current_user?
     if params[:other][:current_password].present? && !!@user.authenticate(params[:other][:current_password])
@@ -44,7 +49,8 @@ class UsersController < ApplicationController
     end
   end
 
-
+  # /:slug
+  # user_path
   def destroy
     @user.destroy if user_is_current_user?
     reset_session
