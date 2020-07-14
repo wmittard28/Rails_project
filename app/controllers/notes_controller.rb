@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+  respond_to :html, :json
 
 
     def new
@@ -22,13 +23,7 @@ class NotesController < ApplicationController
       idx = @note.job_application.note_ids.index(@note.id)
       @prev_note = (idx > 0) ? @note.job_application.notes[idx-1] : @note
       @next_note = (idx < (@note.job_application.notes.size-1)) ? @note.job_application.notes[idx+1] : @note
-
-      respond_to do |format|
-        format.html
-        format.json { render :json => { :log => @note,
-          :prev_note_path => job_application_note_path(@prev_note.job_application, @prev_note),
-          :next_note_path => job_application_note_path(@next_note.job_application, @next_note) } }
-      end
+      respond_with(@note)
     end
 
 

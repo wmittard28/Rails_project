@@ -1,6 +1,5 @@
 class JobApplicationsController < ApplicationController
-  respond_to :html
-  respond_to :json
+  respond_to :html, :json #formats I want responders to handle
 
 
   #/:slug/job_applications
@@ -18,7 +17,7 @@ class JobApplicationsController < ApplicationController
     redirect_to job_applications_path(current_user) unless user_is_current_user?
     @job_application = @user.job_applications.build(job_application_params) #.build returns a new object of the collection type
     if job_application_dates_valid? && @job_application.save
-      respond_with(@job_application, location: job_applications_path)
+      respond_with(@job_application, location: job_applications_path) #used location: to overrider redirect_to 
     else
       render :index and return
     end
