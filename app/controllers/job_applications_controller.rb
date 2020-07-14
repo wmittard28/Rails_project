@@ -1,11 +1,14 @@
 class JobApplicationsController < ApplicationController
+  respond_to :html
+  respond_to :json
+
 
   #/:slug/job_applications
   #job_applications_path
   def index
     redirect_to job_applications_path(current_user) unless user_exists?
     if user_is_current_user?
-      @job_application = current_user.job_applications.build.tap{|job_application| job_application.build_company}
+      @job_application = current_user.job_applications.build.tap{|job_application| job_application.build_company} #allows me to manipulate object
     end
   end
 
@@ -13,13 +16,11 @@ class JobApplicationsController < ApplicationController
   # job_applications_path
   def create
     redirect_to job_applications_path(current_user) unless user_is_current_user?
-    @job_application = @user.job_applications.build(job_application_params)
+    @job_application = @user.job_applications.build(job_application_params) #.build returns a new object of the collection type
     if job_application_dates_valid? && @job_application.save
-      respond_to do |format|
-        format.html { redirect_to job_applications_path(@user) }
-        format.json { render :json => @job_application }
-      end
-    else render :index and return
+      respond_with(@job_application, location: job_applications_path)
+    else
+      render :index and return
     end
   end
 
@@ -27,10 +28,7 @@ class JobApplicationsController < ApplicationController
   # job_application_path
   def show
     redirect_to job_applications_path(current_user) unless job_application_exists?
-    respond_to do |format|
-      format.html
-      format.json { render :json => @job_application }
-    end
+    respond_with(@job_application)
   end
 
   # /job_applications/:id/edit
