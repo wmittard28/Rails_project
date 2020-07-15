@@ -6,14 +6,10 @@ class Company < ApplicationRecord
     before_validation :create_slug_from_name
     validate :slug_is_present_and_unique
 
-    validates :name, :presence   => true,
-                     :uniqueness => true
+    validates :name, :presence   => true, :uniqueness => true
 
-    def self.most_popular(n = 15)
-      self.left_joins(:users)
-          .group(:name)
-          .order("COUNT(users.id) DESC")
-          .limit(n)
+    def self.most_popular(n = 15) #scope method
+      self.left_joins(:users).group(:name).order("COUNT(users.id) DESC").limit(n)
     end
 
     def to_param

@@ -15,25 +15,25 @@ class SessionsController < ApplicationController
 
     # /sessions
     # sessions_path
-    def create #OmniAuth signup
+    def create
       redirect_to home_path if logged_in?
       if !!( auth_hash = auth )
         @user = User.find_or_create_by_omniauth(auth_hash)
         if @user.persisted? then session[:user_id] = @user.id
-        else
-          render :new
+        else render :new and return
         end
-      else #manual sign up
+      else
         @user = User.find_by(credentials)
         if ( !!@user && @user.authenticate(user_params[:password]) )
           session[:user_id] = @user.id
         else
           @user = User.new.tap{|u| u.errors.add(:username, "or password is invalid")}
-          render :new
+          render :new and return
         end
       end
       redirect_to job_applications_path(current_user)
     end
+
 
     # /logout
     # logout_path

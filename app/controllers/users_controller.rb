@@ -15,8 +15,7 @@ class UsersController < ApplicationController
     redirect_to home_path if logged_in?
     @user = User.new(user_params)
     if @user.save then session[:user_id] = @user.id
-    else
-      render :new
+    else render :new and return
     end
     redirect_to job_applications_path(current_user)
   end
@@ -42,11 +41,11 @@ class UsersController < ApplicationController
         redirect_to user_path(current_user)
       else
         @user.slug = current_user.slug
-        render :edit
+        render :edit and return
       end
     else
       @user.errors.add(:current_password, "is invalid")
-      render :edit
+      render :edit and return
     end
   end
 
