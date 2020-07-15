@@ -18,7 +18,7 @@ class Company < ApplicationRecord
 
     private
 
-    def create_slug_from_name
+    def create_slug_from_name #creates slug for company rankings in URL
       self.slug = self.name.try(:parameterize)
     end
 

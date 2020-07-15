@@ -1,16 +1,14 @@
 class User < ApplicationRecord
-    has_many :job_applications, :dependent => :destroy
+    has_many :job_applications, :dependent => :destroy #built in to signify to AR what happens when object is destroyed
     has_many :companies, :through => :job_applications
     has_many :notes, :through => :job_applications
 
     has_secure_password #uses Bcrypt
 
     before_validation :create_slug_from_username
-    validate :slug_is_present_and_unique
 
-    validates :username, :presence   => true,:uniqueness => true, :format     => {:without => /\A.*\@.*\z/}
-
-    validates :email,    :presence   => true, :uniqueness => true, :format     => {:with => /\A\w+\@\w+\.\w+\z/}
+    validates :username, :presence   => true,:uniqueness => true
+    validates :email,    :presence   => true, :uniqueness => true
 
       def self.find_or_create_by_omniauth(auth)
         where(email: auth.info.email).first_or_initialize do |user|
@@ -29,30 +27,21 @@ class User < ApplicationRecord
       self.job_applications.where("start_date < ?", Time.now.to_date).order("start_date DESC")
     end
 
-    def public_attributes
-      self.attributes.except("id", "slug", "password_digest", "uid", "created_at", "updated_at")
+    def public_attributes #what can't be accessed in users account
+      self.attributes.except("id", "slug", "provider", "password_digest", "uid", "created_at", "updated_at")
     end
 
     def uniq_companies
       self.companies.group(:name).order(:name)
     end
 
-    def to_param
+    def to_param #allows me override user_id in URL for slug
       self.slug
     end
 
     private
 
     def create_slug_from_username
-      self.slug = self.username.try(:parameterize)
+      self.slug = self.username.try(:parameterize) #allows a user to sign up and create slug from username
     end
-
-    def slug_is_present_and_unique
-      if self.slug.present? && self.class.where.not(:id => self.id).where(:slug => self.slug).any?
-        errors.add(:username, "(slug) has already been taken")
-      end
-    end
-
-
-
-  end
+end
