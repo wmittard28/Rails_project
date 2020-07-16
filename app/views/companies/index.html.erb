@@ -1,5 +1,12 @@
 <div class="content-container">
 
+<h4>Search by Company:</h4>
+  <%= form_tag(companies_path, method: :get) do %>
+   <%= text_field_tag(:search, params[:search]) %>
+   <%= submit_tag ("Search") %>
+   <% end %>
+
+
   <% if @user.companies.size < 1 %>
 
     <div class="content-header-container">

@@ -4,6 +4,7 @@ class CompaniesController < ApplicationController
    # companies_path
    def index
       redirect_to companies_path(current_user) unless user_exists?
+      @companies = Company.search(params[:search])
     end
 
 
@@ -14,6 +15,10 @@ class CompaniesController < ApplicationController
     end
 
     private
+
+    def company_params
+      params.require(:company).permit(:name, :search)
+    end
 
     def company_exists?
       !!( @company = Company.find_by(:slug => params[:slug]) ) #converts to boolean

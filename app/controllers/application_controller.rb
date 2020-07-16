@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
     helper_method :current_user, :logged_in?
 
     def current_user
-      @current_user ||= User.find_by(:id => session[:user_id]) if !!session[:user_id] #conditional assignment 
+      @current_user ||= User.find_by(:id => session[:user_id]) if !!session[:user_id] #conditional assignment
     end
 
     def logged_in?
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     end
 
     def user_exists?
-      !!( @user = User.find_by(:slug => params[:slug]) )
+      !!( @user = User.find_by(:slug => params[:slug]) ) #boolean
     end
 
     def user_is_current_user?

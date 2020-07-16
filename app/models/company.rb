@@ -8,11 +8,25 @@ class Company < ApplicationRecord
 
     validates :name, :presence   => true, :uniqueness => true
 
+    def self.search(search)
+      if search
+        company = Company.find_by(name: search)
+        if company
+          self.where(company_id: company)
+      else
+        Company.all
+      end
+    else
+      Company.all
+    end
+  end
+
+
     def self.most_popular(n = 15) #scope method
       self.left_joins(:users).group(:name).order("COUNT(users.id) DESC").limit(n)
     end
 
-    def to_param
+    def to_param #allows me override user_id in URL for slug
       self.slug
     end
 

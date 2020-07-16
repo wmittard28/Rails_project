@@ -43,7 +43,7 @@ class JobApplicationsController < ApplicationController
     redirect_to job_applications_path(current_user) unless job_application_belongs_to_current_user?
     if job_application_dates_valid? && @job_application.update(job_application_params) then redirect_to job_applications_path(current_user)
     else
-      render :edit 
+      render :edit
     end
   end
 
@@ -70,15 +70,15 @@ class JobApplicationsController < ApplicationController
   end
 
   def job_application_dates_valid?
-    %w[start_date end_date].all? do |attribute| # %w cleans code for an array of strings
-      if job_application_params[attribute].blank?
+    %w[start_date end_date].all? do |attribute| # foo_bar is notation to write an array of strings
+      if job_application_params[attribute].blank? # returns true if no elements
         true
       else
-        if !!( job_application_params[attribute] =~ /\A\d{4}-\d{1,2}-\d{1,2}\z/ )
-          yyyymmdd = job_application_params[attribute].split(/\D/).map(&:to_i)
-          !!Date.new(*yyyymmdd) rescue ( @job_application.errors.add(attribute.to_sym, "is invalid"); false )
+        if !!( job_application_params[attribute] =~ /\A\d{4}-\d{1,2}-\d{1,2}\z/ ) # 4 #'s, 1 or 2 #'s, 1 or 2#'s, A and Z whitespace
+          yyyymmdd = job_application_params[attribute].split(/\D/).map(&:to_i) #calls a method on array element, proc returns object
+          !!Date.new(*yyyymmdd) rescue ( @job_application.errors.add(attribute.to_sym, "is invalid"); false ) # boolean if new date true persist, if not rescue
         else
-          @job_application.errors.add(attribute.to_sym, "format is invalid"); false
+          @job_application.errors.add(attribute.to_sym, "format is invalid"); false #to_sym returns the symbol
         end
       end
     end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # :as a cusotmized route helper
   root 'home#welcome'
   get  '/about' => 'home#about'
 

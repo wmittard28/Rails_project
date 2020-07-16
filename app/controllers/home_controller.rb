@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
-    skip_before_action :verify_user_is_logged_in #Don't need to verify login for registration 
+    skip_before_action :verify_user_is_logged_in 
 
   # /
   # root_path
